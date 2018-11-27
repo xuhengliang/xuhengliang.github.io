@@ -1,0 +1,290 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo.jpg">
+	<link rel="shortcut icon" href="/img/logo.jpg">
+	
+			    <title>
+    Java学习之路
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="miccall">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/timg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Redis高级应用</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="Redis高级应用"><a href="#Redis高级应用" class="headerlink" title="Redis高级应用"></a>Redis高级应用</h2><h3 id="事务管理"><a href="#事务管理" class="headerlink" title="事务管理"></a>事务管理</h3><h4 id="redis的事务支持"><a href="#redis的事务支持" class="headerlink" title="redis的事务支持:"></a>redis的事务支持:</h4><p>与其他NoSQL不同Redis是存在事务的,尽管没有传统数据库那么强大,但是还是非常有用,尤其是高并发的情况中,使用redis的事务可以保证数据一致性的同时,大幅度提高数据读写的响应速度</p>
+<h4 id="事务特点"><a href="#事务特点" class="headerlink" title="事务特点:"></a>事务特点:</h4><p>redis的事务是使用watch-multi-exec-discard-unwatch的命令组合,它可以提供两个重要保证：<br>1.事务是一个被隔离的操作，事务中的方法都会被redis进行序列化并按顺序执行，事务在执行的过程中不会被其他客户端的发出的命令所打断<br>2.事务是一个原子性操作，它要么全部执行、要么全部不执行</p>
+<h4 id="事务操作"><a href="#事务操作" class="headerlink" title="事务操作:"></a>事务操作:</h4><p>1.multi:开启事务(OK),之后的命令就会进入队列(QUEUED),而不是马上执行<br>2.exec:执行事务如果被监听的键没有被修改,则采用提交命令,否则就执行回滚命令<br>3.discard:回滚事务<br>4.watch key1 key2…:监听某些键,当被监听的键在提交事务前被修改,则事务会回滚(基于乐观锁机制)<br>5.unwatch key1 key2…:取消监听</p>
+<h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><p>redis不会判断数据类型,如果遇到命令语法格式正确而数据类型不符合的情况,不会事务回滚</p>
+<h5 id="Spring操作事务-需要保证是一个连接-所以不能直接使用模板对象"><a href="#Spring操作事务-需要保证是一个连接-所以不能直接使用模板对象" class="headerlink" title="Spring操作事务:需要保证是一个连接,所以不能直接使用模板对象"></a>Spring操作事务:需要保证是一个连接,所以不能直接使用模板对象</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">    @Test</span><br><span class="line">    public void redisTransation()&#123;</span><br><span class="line">        //事务必须是同一个连接,此时开启操作都是单挑连接</span><br><span class="line">//        redisTemplate.multi();</span><br><span class="line">//        redisTemplate.opsForValue().set(&quot;name&quot;,&quot;zhangsan&quot;);</span><br><span class="line">//        redisTemplate.opsForValue().set(&quot;age&quot;,&quot;19&quot;);</span><br><span class="line">//        String name = (String) redisTemplate.opsForValue().get(&quot;name&quot;);</span><br><span class="line">//        System.out.println(name);</span><br><span class="line">//        redisTemplate.exec();</span><br><span class="line">        //先保证同一个连接</span><br><span class="line">        redisTemplate.execute(new SessionCallback() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public Object execute(RedisOperations operations) throws DataAccessException &#123;</span><br><span class="line"></span><br><span class="line">                operations.multi();</span><br><span class="line">                operations.opsForValue().set(&quot;name&quot;,&quot;zhangsan&quot;);</span><br><span class="line">                operations.opsForValue().set(&quot;age&quot;,&quot;19&quot;);</span><br><span class="line">                String name = (String) redisTemplate.opsForValue().get(&quot;name&quot;);</span><br><span class="line">                System.out.println(name);</span><br><span class="line">                List list = operations.exec();</span><br><span class="line">                //返回结果</span><br><span class="line">                System.out.println(list);</span><br><span class="line">                return list;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="流水线-了解"><a href="#流水线-了解" class="headerlink" title="流水线(了解)"></a>流水线(了解)</h4><h5 id="为什么需要流水线操作"><a href="#为什么需要流水线操作" class="headerlink" title="为什么需要流水线操作?"></a>为什么需要流水线操作?</h5><p>在实际开发过程中,redis的性能瓶颈不在于自己计算能力,通常限制在于网络传输,为了减少网络传输所带来的redis性能闲置时间,因此就可以使用流水线,类似于批处理操作</p>
+<h5 id="注意"><a href="#注意" class="headerlink" title="注意:"></a>注意:</h5><p>流水线必须是同一个连接才能实现,所以在实际开发过程中,通常是多个人进行redis操作,这种情况下流程线是不适用的,如果一个人需要进行大量的redis操作,这个时候才需要考虑流水线</p>
+<h4 id="发布和订阅-了解"><a href="#发布和订阅-了解" class="headerlink" title="发布和订阅(了解)"></a>发布和订阅(了解)</h4><h5 id="发布与订阅的命令"><a href="#发布与订阅的命令" class="headerlink" title="发布与订阅的命令"></a>发布与订阅的命令</h5><p>1.subscribe chat<br>2.publish chat “message”</p>
+<h5 id="redis发布与订阅"><a href="#redis发布与订阅" class="headerlink" title="redis发布与订阅"></a>redis发布与订阅</h5><p>redis提供了消息发布和订阅的功能,一方作为订阅者,订阅某个管道,另一方作为发布者,发布消息,订阅方就能及时接受到这个消息</p>
+<h4 id="redis的发布订阅和传统MQ的各自特点"><a href="#redis的发布订阅和传统MQ的各自特点" class="headerlink" title="redis的发布订阅和传统MQ的各自特点"></a>redis的发布订阅和传统MQ的各自特点</h4><h5 id="redis特点"><a href="#redis特点" class="headerlink" title="redis特点:"></a>redis特点:</h5><p>轻量级,实时性,数据安全性低(消息发送出,有可能没被订阅者收到)</p>
+<h5 id="传统MQ特点"><a href="#传统MQ特点" class="headerlink" title="传统MQ特点:"></a>传统MQ特点:</h5><p>专业级,能处理的消息量更大,实时性较低,数据安全性有保证</p>
+<h4 id="超时时间"><a href="#超时时间" class="headerlink" title="超时时间"></a>超时时间</h4><h5 id="概述"><a href="#概述" class="headerlink" title="概述:"></a>概述:</h5><p>1.给redis的key设置一个过期的时间,时间到之后该键值对就会被redis清理,节省内存<br>2.在实际开发过程中,因为内存的限制,并不可能保证redis和数据库的数据达到完全相同,因此只能尽可能保证redis中存储的都是热点数据(被频繁访问的数据)<br>3.对于这种情况,如何保证热点数据被存在redis中,通可以使用超时命令+内存管理(内存回收策略)两个方案:<br>在实际开发过程中,项目组通常都会要求开发者给所有的缓存数据添加超时时间</p>
+<h4 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h4><p>1.persist key :<br>持久化key,即得永生(移除key的超时时间),所有的key默认就是永生的<br>2.[p(毫秒)]expire key seconds:<br>设置key的超时时间,单位是s,通常设置超时时间为5~10分钟<br>3.[p(毫秒)]ttl key :<br>查看key的剩余时间,单位是秒<br>-1表示永生<br>-2表示死亡</p>
+<h5 id="注意点"><a href="#注意点" class="headerlink" title="注意点:"></a>注意点:</h5><p>redis在key过期后,不会立刻从内存中移除该键值对<br>因为如果需要从内存中移除过期的键对应的键值对,redis需要维护一个观察key是否过期的功能,这样肯定会降低redis的性能,这并不是开发者所希望看见的情况</p>
+<h5 id="以下三种情况下-redis会从内存中移除键值对"><a href="#以下三种情况下-redis会从内存中移除键值对" class="headerlink" title="以下三种情况下,redis会从内存中移除键值对:"></a>以下三种情况下,redis会从内存中移除键值对:</h5><p>1.当用户使用get命令获取一个已经超时的key时,redis会立刻从内存中清除该键值对<br>2.redis内部有一个定时器,默认是每秒清除一次过期的key<br>3.如果内存满了根据不同的淘汰策略,redis会清除某些键值对(这些key有可能没有过期,甚至是永生的)</p>
+<h4 id="Lua脚本语言"><a href="#Lua脚本语言" class="headerlink" title="Lua脚本语言"></a>Lua脚本语言</h4><h5 id="为什么需要Lua脚本"><a href="#为什么需要Lua脚本" class="headerlink" title="为什么需要Lua脚本?"></a>为什么需要Lua脚本?</h5><p>具体的业务逻辑需要用java程序控制,因此redis2.6以后开始支持Lua脚本,Lua脚本端可以在redis实现<strong>复杂的业务逻辑</strong><br>Lua脚本的另一个特点,可以保证整个脚本是原子性执行的,线程是安全的,能够保证并发数据一致性(基于redis的单线程模式)<br>类似于存储过程(但是存储过程是线程不安全的)</p>
+<h5 id="redis是单线程模型还是多线程模型"><a href="#redis是单线程模型还是多线程模型" class="headerlink" title="redis是单线程模型还是多线程模型?"></a>redis是单线程模型还是多线程模型?</h5><h6 id="什么是多线程模型"><a href="#什么是多线程模型" class="headerlink" title="什么是多线程模型?"></a>什么是多线程模型?</h6><p>eg:tomcat内部维护一个线程池,对于多个请求开启多条线程同时处理</p>
+<h6 id="什么是单线程模型"><a href="#什么是单线程模型" class="headerlink" title="什么是单线程模型?"></a>什么是单线程模型?</h6><p>eg:redis内部维护一个队列,对于多个客户端的多个请求进行排列后,然后单线程的依次处理每个请求</p>
+<h4 id="如何选择"><a href="#如何选择" class="headerlink" title="如何选择:"></a>如何选择:</h4><p>根据CPU的空闲时间判断<br>1.如果CPU的空闲时间比较多,则应该选择多线程;<br>2.如果CPU的空闲时间比较少,则应该选择单线程;</p>
+<h4 id="eg"><a href="#eg" class="headerlink" title="eg:"></a>eg:</h4><p>1.tomcat因为要处理很多复杂的业务并且与网络有关联,这些业务可能会导致线程阻塞,线程阻塞时,CPU为了不空闲,切换到其他线程处理请求<br>2.redis计算能力很高,所以CPU利用很高,在请求量很大的时候,几乎不会出现CPU空闲时间,这个时候如果采用多线程,redis还需要额外的线程切换消耗,得不偿失</p>
+<h3 id="Lua脚本语言语法"><a href="#Lua脚本语言语法" class="headerlink" title="Lua脚本语言语法"></a>Lua脚本语言语法</h3><p>lua hello.lua</p>
+<h6 id="注解"><a href="#注解" class="headerlink" title="注解:"></a>注解:</h6><p>单行 –<br>多行–[[ ]]–</p>
+<h6 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h6><p> type(“s”) = string:类型<br>“abc”=3:长度<br>“a”..”b”=”ab”:拼接字符串</p>
+<p>####### 变量声明:<br>变量名=变量值: b = 10</p>
+<p>####### 变量类型:<br>1.全局变量:global a = 20<br>2.局部变量:local b = 10</p>
+<h6 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制:"></a>流程控制:</h6><p>1.if &amp; if-else:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lua if.lua 19 : 传参</span><br><span class="line">age = tonumber(arg[1]) : 接受参数</span><br><span class="line"> if age &gt; 19 then 	</span><br><span class="line">print(&quot;adult&quot;) else print(&quot;child&quot;)</span><br><span class="line"> end</span><br></pre></td></tr></table></figure></p>
+<p>2.if嵌套(没有else if)</p>
+<h6 id="逻辑判断"><a href="#逻辑判断" class="headerlink" title="逻辑判断:"></a>逻辑判断:</h6><p>与或非:and/or/~</p>
+<h6 id="循环"><a href="#循环" class="headerlink" title="循环:"></a>循环:</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">while(i &lt;= 10)</span><br><span class="line">	do</span><br><span class="line">		print(i)</span><br><span class="line">		i = i + 1</span><br><span class="line">	end</span><br><span class="line">	for i=1,10(终止位置),1(步长)</span><br><span class="line">	do</span><br><span class="line">		print(i)</span><br><span class="line">	end</span><br></pre></td></tr></table></figure>
+<h6 id="数组"><a href="#数组" class="headerlink" title="数组:"></a>数组:</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">array=&#123;1,2,3,4,5&#125;</span><br><span class="line">for i=1,#array,1 </span><br><span class="line">do</span><br><span class="line">	print(array[i])</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<h6 id="redis执行Lua脚本"><a href="#redis执行Lua脚本" class="headerlink" title="redis执行Lua脚本"></a>redis执行Lua脚本</h6><h6 id="命令格式"><a href="#命令格式" class="headerlink" title="命令格式:"></a>命令格式:</h6><p>eval lua-script key-num [key1 key2 key3 …] [value1 value2 value3 …]</p>
+<h6 id="解释"><a href="#解释" class="headerlink" title="解释:"></a>解释:</h6><p>eval：代表执行Lua语言的命令<br>lua-script：代表Lua语言脚本<br>key-num：整数，代表参数中有多少个key<br>[key1 key2 key3 …]：key作为参数传递给Lua语言<br>[value1 value2 value3 …]：作为参数传递给Lua,不是必填</p>
+<h6 id="eg-1"><a href="#eg-1" class="headerlink" title="eg:"></a>eg:</h6><p>eval “return ‘content’” 0<br>eval “redis.call(‘set’, KEYS[1], ARGV[1])” 1 hello world</p>
+<h3 id="spring执行Lua脚本"><a href="#spring执行Lua脚本" class="headerlink" title="spring执行Lua脚本"></a>spring执行Lua脚本</h3><p>脚本字符串(开发中不会直接使用字符串)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public void luaScript()&#123;</span><br><span class="line">    //准备手动序列化方式,解决模板和原生连接操作相差性行为</span><br><span class="line">    JdkSerializationRedisSerializer jdkSerializationRedisSerializer = </span><br><span class="line">     new JdkSerializationRedisSerializer();</span><br><span class="line">    //准备脚本</span><br><span class="line">    //1.直接执行脚本字符串</span><br><span class="line">    String luaStr = &quot;return redis.call(&apos;set&apos;,KEYS[1],ARGV[1])&quot;;</span><br><span class="line">    //spring的redisTemplate并没有封装执行lua</span><br><span class="line">    //通过redisTemplate获得连接/2.0之前是jedis/直接使用即可</span><br><span class="line">    RedisConnection connection = redisTemplate.getConnectionFactory().getConnection();</span><br><span class="line">    //手动序列化</span><br><span class="line">    byte[] names = jdkSerializationRedisSerializer.serialize(&quot;name&quot;);</span><br><span class="line">    byte[] xuhengliangs = jdkSerializationRedisSerializer.serialize(&quot;xuhengliang&quot;);</span><br><span class="line">   //通过原始连接对象操作lua脚本</span><br><span class="line">    byte[] result = connection.eval(luaStr.getBytes(), ReturnType.VALUE, 1,names,xuhengliangs);</span><br><span class="line">    //用原始连接进行set不会序列化</span><br><span class="line">    System.out.println(&quot;执行脚本的结果: &quot; + new String(result));</span><br><span class="line"></span><br><span class="line">    System.out.println(redisTemplate.opsForValue().get(&quot;name&quot;));</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>缓存lua脚本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//缓存lua脚本</span><br><span class="line">String luaStr = &quot;return redis.call(&apos;set&apos;,KEYS[1],ARGV[1])&quot;;</span><br><span class="line">RedisConnection connection = redisTemplate.getConnectionFactory().getConnection();</span><br><span class="line">//开始缓存lua脚本,返回脚本的签名(id唯一标志)</span><br><span class="line">String scriptLoad = connection.scriptLoad(luaStr.getBytes());</span><br><span class="line">System.out.println(&quot;缓存脚本的签名:&quot; + scriptLoad);//c686f316aaf1eb01d5a4de1b0b63cd233010e63d</span><br><span class="line">//根据返回的签名,执行缓存脚本</span><br><span class="line">RedisConnection connection = redisTemplate.getConnectionFactory().getConnection();</span><br><span class="line">connection.evalSha(&quot;c686f316aaf1eb01d5a4de1b0b63cd233010e63d&quot;,ReturnType.VALUE,1,&quot;money&quot;.getBytes(),&quot;10000&quot;.getBytes());</span><br><span class="line">执行lua文件(一般是lua文件和缓存一起使用)</span><br><span class="line">    @Test</span><br><span class="line">    public void luaScript() throws IOException &#123;</span><br><span class="line">        //获得lua脚本文件</span><br><span class="line">     File file = new File(this.getClass().getResource(&quot;/static/lua/hello.lua&quot;).getPath());</span><br><span class="line">        //将文件读到内存中</span><br><span class="line">//        InputStream  ips = new FileInputStream(file);</span><br><span class="line">//        ByteArrayOutputStream    ops = new ByteArrayOutputStream();</span><br><span class="line">//</span><br><span class="line">//        int len;</span><br><span class="line">//        byte[] buffer = new byte[1024];</span><br><span class="line">//        while((len = ips.read(buffer)) != -1)&#123;</span><br><span class="line">//            ops.write(buffer,0, len);</span><br><span class="line">//        &#125;</span><br><span class="line">//        //得到脚本的byte数组</span><br><span class="line">//        byte[] bytes = ops.toByteArray();</span><br><span class="line">//直接将文件转成字节数组,通过内存流ByteArrayOutputStream实现</span><br><span class="line">        byte[] bytes = FileUtils.readFileToByteArray(file);</span><br><span class="line">        RedisConnection connection = redisTemplate.getConnectionFactory().getConnection();</span><br><span class="line">        //执行脚本  connection.eval(bytes,ReturnType.VALUE,0,&quot;99&quot;.getBytes(),&quot;xuhengliang&quot;.getBytes(),&quot;lidiqiu&quot;.getBytes());</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="redis的持久化"><a href="#redis的持久化" class="headerlink" title="redis的持久化"></a>redis的持久化</h3><h4 id="持久化方式"><a href="#持久化方式" class="headerlink" title="持久化方式"></a>持久化方式</h4><h4 id="快照RDB-默认行为"><a href="#快照RDB-默认行为" class="headerlink" title="快照RDB(默认行为):"></a>快照RDB(默认行为):</h4><p>快照(snapshotting)它是备份当前瞬间redis在内存中的数据结构,当重启redis之后,从快照中直接恢复数据到内存中即可<br>shutdown [save|nosave] : 默认关闭redis时会拍一次快照</p>
+<h5 id="相关命令-1"><a href="#相关命令-1" class="headerlink" title="相关命令:"></a>相关命令:</h5><p>1.save:<br>使用当前线程拍摄快照,快照的时候会拒绝客户端的所有写命令<br>2.bgsave:<br>开启一个新的线程拍摄快照,当前线程仍然会就收客户端写命令</p>
+<h5 id="相关配置"><a href="#相关配置" class="headerlink" title="相关配置:"></a>相关配置:</h5><p>1.save seconds times :<br>控制快照的频率<br>默认:save 900 1 / save 300 10 /save 60 10000<br>save “” : 配置关闭快照功能<br>2.stop-writes-on-bgsave-error yes :<br>bgsave一旦出错,前台写操作会被拒绝,错误反馈作用<br>3.dbfilename dump.rdb :<br>快照文件的文件名(默认即可)<br>4.dir ./ :<br>快照文件的存放路径 ./ 相对redis.conf</p>
+<h4 id="只追加文件AOF"><a href="#只追加文件AOF" class="headerlink" title="只追加文件AOF:"></a>只追加文件AOF:</h4><p>每次redis执行写命令时,会将该命令记录到一个文件中,当redis重启时,会从文件里面依次执行写命令进,而达到恢复数据的结果</p>
+<h5 id="相关配置-1"><a href="#相关配置-1" class="headerlink" title="相关配置:"></a>相关配置:</h5><p>1.appendonly no :<br>是否启动append only mode,默认关闭<br>2.appendfilename “appendonly.aof” : 文件名</p>
+<h5 id="appendfsnyc-记录写操作的频率"><a href="#appendfsnyc-记录写操作的频率" class="headerlink" title="appendfsnyc : 记录写操作的频率"></a>appendfsnyc : 记录写操作的频率</h5><p>always : 每次写都记录<br>everysec : 每秒钟记录一次(默认)<br>no : 不主动记录,让开发者通过命令被动的记录<br>3.避免aof文件过大的配置:<br>auto-aof-rewrite-percentage 100<br>一旦文件到达上一个文件的100就开启一个新的文件<br>auto-aof-rewrite-min-size 64mb<br>一旦文件到64mb就开启一个新的文件<br>aof-load-truncated yes :<br>aof文件恢复,如果最后一条命令出现问题是否忽略,默认是忽略</p>
+<h5 id="选择持久化模式"><a href="#选择持久化模式" class="headerlink" title="选择持久化模式"></a>选择持久化模式</h5><p>特点:<br>RDB:<br>恢复速度快,快照数据的安全性会比AOF低<br>AOF:<br>文件体积有可能很大,而且恢复速度有可能会很慢,<br>但数据的安全性比RDB高,一般最多丢失一秒以内的数据<br>如果希望数据的绝对安全,最好两个同时开启<br>当redis恢复数据时,会先恢复AOF文件再恢复快照<br>如果redis仅仅只是作为缓存服务器,两个都可以关闭<br>最大提示redis的性能,数据在数据库中有<br>一般情况下,推荐使用RDB就可以<br>RDB的性能损耗没有AOF那么大</p>
+<h3 id="redis内存回收策略"><a href="#redis内存回收策略" class="headerlink" title="redis内存回收策略"></a>redis内存回收策略</h3><p>当内存存满的时候,redis该怎么办,取决于内存回收策略的配置<br>maxmemory-policy<br>用于配置redis的内存回收策略,当内存达到最大值时采取的内存处理方式<br>maxmemory-policy可选值:<br>noeviction (默认):不淘汰任何键值对,当内存已经满时,进入只读模式<br>volatile-lru:从所有设置了超时时间的key中,选出最近最少被使用<br>allkeys-lru:从所有key中,选出最近最少被使用<br>volatile-random:从所有设置了超时时间的key中随机选出某些key淘汰<br>allkeys-random:从所有key中随机选出某些key淘汰<br>volatile-ttl:从设置了超时时间的key,选出剩余时间最少的key<br>规律:<br>lru:最近最少使用<br>random:随机<br>ttl:剩余时间最少<br>volatile:从设置了超时时间的key中选择<br>allkeys:从所有的key中选择</p>
+<h5 id="注意-1"><a href="#注意-1" class="headerlink" title="注意:"></a>注意:</h5><p>LRU和TTl算法在redis中都不是精准计算,而是一个近似算法,抽样选择<br>redis默认有一个探测数量的配置maxmemory-samples默认为3,也就是抽样选择3个样本<br>随机抽取样本,在样本中选择符合淘汰策略key淘汰</p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/11/27/Redis高级应用/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2018/11/27/Redis高级应用/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
