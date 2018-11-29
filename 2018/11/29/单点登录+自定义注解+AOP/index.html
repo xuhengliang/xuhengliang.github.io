@@ -1,0 +1,253 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo.jpg">
+	<link rel="shortcut icon" href="/img/logo.jpg">
+	
+			    <title>
+    Java学习之路
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="miccall">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/timg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>分布式商城redis应用,实现单点登录和购物车功能</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h3 id="单点登录-自定义注解-AOP"><a href="#单点登录-自定义注解-AOP" class="headerlink" title="单点登录+自定义注解+AOP"></a>单点登录+自定义注解+AOP</h3><h4 id="技术点"><a href="#技术点" class="headerlink" title="技术点:"></a>技术点:</h4><p>redis+jsonp+cookie实现分布式系统内部的单点登录</p>
+<h4 id="抽取公共的js"><a href="#抽取公共的js" class="headerlink" title="抽取公共的js"></a>抽取公共的js</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">$(function () &#123;</span><br><span class="line">    $.ajax(&#123;</span><br><span class="line">        //url进行远程访问,跨域限制@CrossOriginal无法携带cookie所以只能通过jsonp实现</span><br><span class="line">        url:&apos;http://localhost:8085/sso/isLogin&apos;,</span><br><span class="line">        // 后台返回的是一个js函数</span><br><span class="line">        dataType:&apos;jsonp&apos;,</span><br><span class="line">        method:&apos;post&apos;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line">//直接调用取出data即可</span><br><span class="line">function isLogin(data) &#123;</span><br><span class="line">	//将json字符串转成json对象</span><br><span class="line">    var json = eval(&apos;(&apos; + data + &apos;)&apos;);</span><br><span class="line">    if(data != null)&#123;</span><br><span class="line">        $(&quot;#pid&quot;).html(&quot;您好&quot;+json.username+&quot;，欢迎来到&lt;b&gt;&lt;a href=\&quot;/\&quot;&gt;ShopCZ商城&lt;/a&gt;&lt;/b&gt; &lt;a href=\&quot;http://localhost:8085/sso/logout\&quot; &gt;注销&lt;/a&gt;&quot;);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        $(&quot;#pid&quot;).html(&quot;[&lt;a href=\&quot;javascript:toLogin()\&quot; &gt;登录&lt;/a&gt;][&lt;a &gt;注册&lt;/a&gt;]&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> * 在跳转前获取页面url</span><br><span class="line"> * location.href可以直接取值</span><br><span class="line"> * encodeURI()可以对地址栏的中文进行转码</span><br><span class="line"> * replace解决拼接多个参数的问题</span><br><span class="line"> */</span><br><span class="line">function toLogin()&#123;</span><br><span class="line">    //获取本地url</span><br><span class="line">    var localUrl = location.href;</span><br><span class="line">    //对url进行编码</span><br><span class="line">    localUrl = encodeURI(localUrl);</span><br><span class="line">    //&amp;拼接需要保证为一个参数需要手动编码</span><br><span class="line">    localUrl = localUrl.replace(&quot;&amp;&quot;,&quot;%26&quot;);</span><br><span class="line">    location.href = &quot;http://localhost:8085/sso/toLogin?returnUrl=&quot; + localUrl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="redis-cookie实现登录"><a href="#redis-cookie实现登录" class="headerlink" title="redis+cookie实现登录"></a>redis+cookie实现登录</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * redis+jsonp+cookie实现分布式系统内部的单点登录</span><br><span class="line"> * 如果是多个系统无法通过cookie实现</span><br><span class="line"> * @Author 许恒亮</span><br><span class="line"> * @Time 2018/11/27 11:17</span><br><span class="line"> * @Version 1.0</span><br><span class="line"> */</span><br><span class="line">Controller</span><br><span class="line">@RequestMapping(&quot;/sso&quot;)</span><br><span class="line">public class SSOController &#123;</span><br><span class="line"></span><br><span class="line">    @Reference</span><br><span class="line">    private IUserService userService;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private RedisTemplate redisTemplate;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * returnUrl是跳转到登录页面前的页面url,带参数</span><br><span class="line">     * @param returnUrl</span><br><span class="line">     * @param model</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(&quot;/toLogin&quot;)</span><br><span class="line">    public String toLogin(String returnUrl,Model model)&#123;</span><br><span class="line">        model.addAttribute(&quot;returnUrl&quot;,returnUrl);</span><br><span class="line">        return &quot;login&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 登录功能</span><br><span class="line">     * 知识点:</span><br><span class="line">     * 1.ResultData在Service层对不同的结果设置不同的状态码自定义规则和错误信息</span><br><span class="line">     * 2.returnUrl在跳转到登录页面的时候将本地的url通过地址栏带参数的方式带到登录页面</span><br><span class="line">     * 然后作为隐藏域参数添加到登录后的页面跳转redirect+returnUrl实现对不同页面登录响应不同的结果</span><br><span class="line">     * 同时对地址栏进行编码,js解决中文乱码问题,encodeUri(returnUrl参数)</span><br><span class="line">     * 如果带有多个参数&amp;需要手动进行替换 replace(&quot;&amp;&quot;,&quot;%26&quot;)只有这样才能将url整个作为一个参数进行传递后跳转页面</span><br><span class="line">     * @param username</span><br><span class="line">     * @param password</span><br><span class="line">     * @param model</span><br><span class="line">     * @param response</span><br><span class="line">     * @param returnUrl</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(&quot;/login&quot;)</span><br><span class="line">    public String login(String username, String password, Model model, HttpServletResponse response,String returnUrl)&#123;</span><br><span class="line">        //登陆</span><br><span class="line">        ResultData&lt;User&gt; resultData = userService.login(username, password);</span><br><span class="line">        switch (resultData.getCode())&#123;</span><br><span class="line">            case 200:</span><br><span class="line">                //登陆成功</span><br><span class="line"></span><br><span class="line">                if(returnUrl == null || &quot;&quot;.equals(returnUrl))&#123;</span><br><span class="line">                    returnUrl = &quot;http://localhost:8082&quot;;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                //将用户信息放到redis中</span><br><span class="line">                redisTemplate.opsForValue().set(Constant.LOGIN_TOKEN,resultData.getData());</span><br><span class="line">                //将token写到客户端cookie中</span><br><span class="line">                Cookie cookie = new Cookie(&quot;login_token&quot;,Constant.LOGIN_TOKEN);</span><br><span class="line">                cookie.setMaxAge(60 * 60 * 24 * 7);//设置过期时间</span><br><span class="line">                cookie.setPath(&quot;/&quot;);//设置cookie的有效路径</span><br><span class="line">//                cookie.setDomain();//设置cookie的有效域名,可以写二级域名,例如jd.com</span><br><span class="line">//                cookie.setHttpOnly();//设置cookie是否能被script等脚本访问</span><br><span class="line">//                cookie.setSecure();//设置cookie是否只支持https</span><br><span class="line">                response.addCookie(cookie);</span><br><span class="line">                model.addAttribute(&quot;user&quot;,resultData.getData());</span><br><span class="line">                return &quot;redirect:&quot; + returnUrl;</span><br><span class="line">            default:</span><br><span class="line">                //登录失败</span><br><span class="line">                model.addAttribute(&quot;error&quot;,resultData.getMessage());</span><br><span class="line">                return &quot;login&quot;;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 验证是否登陆成功</span><br><span class="line">     * 只有jsonp才能带cookie,所以不能使用  @CrossOrigin</span><br><span class="line">     * @param token</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(&quot;/isLogin&quot;)</span><br><span class="line">    @ResponseBody</span><br><span class="line">    public String checkLogin(@CookieValue(value = Constant.LOGIN_TOKEN,required = false) String token)&#123;</span><br><span class="line">        User user = null;</span><br><span class="line">        if(token != null)&#123;</span><br><span class="line">            user = (User)redisTemplate.opsForValue().get(token);</span><br><span class="line">        &#125;</span><br><span class="line">        return user != null ? &quot;isLogin(&apos;&quot; + new Gson().toJson(user) + &quot;&apos;)&quot; : &quot;isLogin(null)&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 注销功能</span><br><span class="line">     * 需要注意:把redis缓存中的数据情况还有cookie设为时间为0</span><br><span class="line">     * @param token</span><br><span class="line">     * @param response</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    @RequestMapping(&quot;/logout&quot;)</span><br><span class="line">    public String logout(@CookieValue(value = Constant.LOGIN_TOKEN,required = false) String token, HttpServletResponse response)&#123;</span><br><span class="line">        if(token != null)&#123;</span><br><span class="line">            //清空redis</span><br><span class="line">            redisTemplate.delete(token);</span><br><span class="line">            //删除cookie</span><br><span class="line">            Cookie cookie = new Cookie(Constant.LOGIN_TOKEN, null);</span><br><span class="line">            cookie.setMaxAge(0);</span><br><span class="line">            //cookie可以重名,只要path不同,这时候是不同的cookie只通过名字是不能覆盖的</span><br><span class="line">            cookie.setPath(&quot;/&quot;);</span><br><span class="line">            response.addCookie(cookie);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        return &quot;login&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="购物车实现"><a href="#购物车实现" class="headerlink" title="购物车实现"></a>购物车实现</h3><h4 id="技术点-1"><a href="#技术点-1" class="headerlink" title="技术点:"></a>技术点:</h4><p>AOP+自定义注解+redis+cookie</p>
+<h4 id="controller"><a href="#controller" class="headerlink" title="controller"></a>controller</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">@RequestMapping(&quot;/cart&quot;)</span><br><span class="line">public class CartController &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @IsLogin//默认不需要强制登录</span><br><span class="line">    @RequestMapping(&quot;/addCart&quot;)</span><br><span class="line">    public String addCart(Cart cart, User user)&#123;</span><br><span class="line">        System.out.println(cart);</span><br><span class="line">        System.out.println(user);</span><br><span class="line">        return &quot;success&quot;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="自定义注解"><a href="#自定义注解" class="headerlink" title="自定义注解"></a>自定义注解</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> *</span><br><span class="line"> * 自定义注解</span><br><span class="line"> * 注解的声明：public @interface 注解名称</span><br><span class="line"> *</span><br><span class="line"> * 元注解：标记注解的注解</span><br><span class="line"> * @Documented：表示该注解会被javadoc命令写入api文档中</span><br><span class="line"> * @Target：注解的标记位置</span><br><span class="line"> *  ElementType.ANNOTATION_TYPE：该注解可以标记别的注解</span><br><span class="line"> *  ElementType.CONSTRUCTOR：标注到构造方法</span><br><span class="line"> *  ElementType.FIELD：标注到成员属性</span><br><span class="line"> *  ElementType.LOCAL_VARIABLE：标注到局部变量</span><br><span class="line"> *  ElementType.METHOD：标注到方法上</span><br><span class="line"> *  ElementType.PACKAGE：标注到包上</span><br><span class="line"> *  ElementType.PARAMETER：标注到方法形参上</span><br><span class="line"> *  ElementType.TYPE：标注到类、接口、枚举类上</span><br><span class="line"> * @Retention：注解的作用范围</span><br><span class="line"> *  RetentionPolicy.SOURCE：注解的有效范围只在源码中，编译后就被丢弃</span><br><span class="line"> *  RetentionPolicy.CLASS：注解有效范围在编译文件中，运行时丢弃</span><br><span class="line"> *  RetentionPolicy.RUNTIME：注解在运行时仍然有效，这个范围的注解可以通过反射获取</span><br><span class="line"> *</span><br><span class="line"> * 注解内的方法声明：</span><br><span class="line"> * 类型 方法名() [defualt 默认值];</span><br><span class="line"> *</span><br><span class="line"> * 注意：</span><br><span class="line"> * 如果一个属性没有设置default默认值，在标记这个注解时，必须给定该属性值</span><br><span class="line"> * 如果一个属性的名字为value,则在赋值时可以省略属性名。当如果需要赋值两个以上的属性，则value不能省略</span><br><span class="line"> * 如果一个属性的类型是数组类型，则应该用&#123;&#125;赋值，如果只要给一个值，&#123;&#125;可以省略</span><br><span class="line"></span><br><span class="line"> */</span><br><span class="line">/**</span><br><span class="line"> * aop 实现</span><br><span class="line"> * @Author 许恒亮</span><br><span class="line"> * @Time 2018/11/27 16:12</span><br><span class="line"> * @Version 1.0</span><br><span class="line"> */</span><br><span class="line">@Target(ElementType.METHOD)//作用范围,方法上</span><br><span class="line">@Retention(RetentionPolicy.RUNTIME)//运行时</span><br><span class="line">public @interface IsLogin &#123;</span><br><span class="line"></span><br><span class="line">    boolean value() default false;//是否强制需要登录</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="切面Aspect"><a href="#切面Aspect" class="headerlink" title="切面Aspect"></a>切面Aspect</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * @Author 许恒亮</span><br><span class="line"> * @Time 2018/11/27 16:17</span><br><span class="line"> * @Version 1.0</span><br><span class="line"> */</span><br><span class="line">@Aspect</span><br><span class="line">public class LoginAspect &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private RedisTemplate redisTemplate;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 环绕增强</span><br><span class="line">     * 判断controller的方法上有没有@IsLogin注解</span><br><span class="line">     * 如果有就对其进行增强</span><br><span class="line">     * 增强效果</span><br><span class="line">     * 1/给方法的形参列表User user 注入值</span><br><span class="line">     * 如果登录了就注入user</span><br><span class="line">     * 如果没登录就注入null</span><br><span class="line">     * 2.如果IsLogin的value=false表示不强制跳转到登录页面</span><br><span class="line">     * 3.如果IsLogin的value=true表示强制跳转到登录页面,一旦发现cookie中没有值直接跳转不允许执行目标方法</span><br><span class="line">     */</span><br><span class="line">    @Around(&quot;execution(* *..*Controller.*(..)) &amp;&amp; @annotation(IsLogin)&quot;)</span><br><span class="line">    //表达式代表所有路径下面的xxxController类中的方法带@IsLogin注解的</span><br><span class="line">    public Object isLogin(ProceedingJoinPoint proceedingJoinPoint) throws Throwable &#123;</span><br><span class="line">        //获得request请求</span><br><span class="line">        ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();</span><br><span class="line">        HttpServletRequest request = requestAttributes.getRequest();</span><br><span class="line">        //通过reuqest获得cookie</span><br><span class="line">        Cookie[] cookies = request.getCookies();</span><br><span class="line">        //循环Cookie</span><br><span class="line">        String token = null;</span><br><span class="line">        if(cookies != null)&#123;</span><br><span class="line">            for (int i = 0; i &lt; cookies.length; i++) &#123;</span><br><span class="line">                //找到令牌对应的Cookie</span><br><span class="line">                if(cookies[i].getName().equals(Constant.LOGIN_TOKEN))&#123;</span><br><span class="line">                    //找到Key</span><br><span class="line">                    token = cookies[i].getValue();</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        User user = null;</span><br><span class="line">        if(token != null &amp;&amp; !&quot;&quot;.equals(token))&#123;</span><br><span class="line">            //通过key去redis中找到用户信息</span><br><span class="line">            //有可能已经登录了</span><br><span class="line">            user = (User) redisTemplate.opsForValue().get(token);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if(user == null)&#123;</span><br><span class="line"></span><br><span class="line">            //没有登录---获得注解上的属性 判断返回情况 true就直接跳转到登录页面</span><br><span class="line">            MethodSignature methodSignature = (MethodSignature) proceedingJoinPoint.getSignature();</span><br><span class="line">            Method method = methodSignature.getMethod();//获得方法对象</span><br><span class="line">            IsLogin isLoginAnnotation = method.getAnnotation(IsLogin.class);//isLogin注解对象</span><br><span class="line"></span><br><span class="line">            boolean flag = isLoginAnnotation.value();//获得isLogin注解的Value值</span><br><span class="line">            if(flag)&#123;//true直接跳转到登录页面</span><br><span class="line">                //因为登录后需要带returnUrl跳转到之前的页面,所以需要通过request对象获得url</span><br><span class="line">                StringBuffer requestURL = request.getRequestURL();</span><br><span class="line">                //带参数</span><br><span class="line">                requestURL.append(request.getQueryString());</span><br><span class="line">                //解决中文乱码问题</span><br><span class="line">                String url = URLEncoder.encode(requestURL.toString(), &quot;utf-8&quot;);</span><br><span class="line">                //同样解决&amp;带参数当做一个参数的问题</span><br><span class="line">                url = url.replace(&quot;&amp;&quot;,&quot;%26&quot;);</span><br><span class="line"></span><br><span class="line">                return &quot;redirect:http://localhost:8085/sso/toLogin?returnUrl=&quot; + url;</span><br><span class="line">            &#125;</span><br><span class="line">            //false继续执行目标方法</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //表示已经登录或者不需要登录就可以继续操作</span><br><span class="line">        //获得形参列表</span><br><span class="line">        Object[] args = proceedingJoinPoint.getArgs();</span><br><span class="line">        if(args != null)&#123;</span><br><span class="line">            for (int i = 0; i &lt; args.length; i++) &#123;</span><br><span class="line">                if(args[i].getClass() ==  User.class)&#123;</span><br><span class="line">                    //找到形参列表上的User user,并将从redis查到的user添加到形参列表</span><br><span class="line">                    args[i] = user;</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        //执行目标方法  --- 带指定的形参列表</span><br><span class="line">        Object result = proceedingJoinPoint.proceed(args);</span><br><span class="line">        //执行目标方法后的方法返回值就是目标方法的返回值</span><br><span class="line">        return result;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="注册切面"><a href="#注册切面" class="headerlink" title="注册切面"></a>注册切面</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@Bean//注册切面</span><br><span class="line">  public LoginAspect loginAspect()&#123;</span><br><span class="line">      return new LoginAspect();</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/11/29/单点登录+自定义注解+AOP/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2018/11/29/单点登录+自定义注解+AOP/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
