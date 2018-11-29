@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo.jpg">
+	<link rel="shortcut icon" href="/img/logo.jpg">
+	
+			    <title>
+    Java学习之路
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="miccall">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/timg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2>Redis集群</h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h2 id="Redis集群"><a href="#Redis集群" class="headerlink" title="Redis集群"></a>Redis集群</h2><h3 id="读-写分离"><a href="#读-写分离" class="headerlink" title="读/写分离"></a>读/写分离</h3><h5 id="什么是读-写分离"><a href="#什么是读-写分离" class="headerlink" title="什么是读/写分离"></a>什么是读/写分离</h5><p> 在用户量非常庞大的时候，单台redis肯定是完全不够用的。因此更多的时候我们更希望可以读/写分离，读/写分离的<strong>前提</strong>就是<strong>读操作比写操作频繁的多</strong>，将数据放在多台服务器上那么久可以消除单台服务器的压力。</p>
+<h5 id="Redis主从同步"><a href="#Redis主从同步" class="headerlink" title="Redis主从同步"></a>Redis主从同步</h5><h6 id="主从同步的过程"><a href="#主从同步的过程" class="headerlink" title="主从同步的过程"></a>主从同步的过程</h6><p> 1.保证主服务器（Master）的启动<br> 2.当从服务器启动时，<strong>发送SYNC命令</strong>给主服务器。主服务器接受到同步命令时，就是执行bgsave命令备份数据，但是主服务器并不会拒绝客户端的写操作，而是将来自客户端的<strong>写命令写入缓冲区</strong>。从服务器在未收到主服务器的备份快照文件之前，会根据配置决定使用现有数据响应客户端还是返回错误<br> 3.当bgsave命令被主服务器执行完后，开始向从服务器发送备份文件，这个时候从服务器就会丢弃现有的所有数据，开始载入发送过来的快照文件<br> 4.当主服务器发送完备份文件后，会将bgsave执行之后的缓存区内的写命令也发送给从服务器，从服务器完成备份文件解析后，就开始等待主服务器的后续命令<br> 5.同步完成以后，每次主服务器完成一次写入命令，都会同时往从服务器发送同步写入命令，主从同步就完成了</p>
+<h6 id="配置主从同步"><a href="#配置主从同步" class="headerlink" title="配置主从同步"></a>配置主从同步</h6><p> 从机配置：<br>slaveof server port  设置Master的ip和端口<br>masterauth root 设置Master的密码</p>
+<h5 id="Redis哨兵模式（sentinel）"><a href="#Redis哨兵模式（sentinel）" class="headerlink" title="Redis哨兵模式（sentinel）"></a>Redis哨兵模式（sentinel）</h5><h6 id="什么是哨兵模式？"><a href="#什么是哨兵模式？" class="headerlink" title="什么是哨兵模式？"></a>什么是哨兵模式？</h6><p> 主从同步有一个问题就是：当Master宕机以后需要手动的把一台Slave切换为Master，这种方式需要人工干预，费时费力。因此哨兵模式可以帮助我们解决这个问题</p>
+<h6 id="哨兵模式概述"><a href="#哨兵模式概述" class="headerlink" title="哨兵模式概述"></a>哨兵模式概述</h6><p> 哨兵是一个<strong>独立的进程</strong>。<br> 哨兵会检测多个redis服务器，包括Master和Slave。通过发送命令，让redis服务器响应，检测其运行状态。<br> 当哨兵检测到master宕机，就会自动将slave切换成master，然后通过<strong>发布订阅</strong>模式通知其他slave修改配置文件，切换主机<br> 为了实现哨兵的高可用，可以配置成多哨兵模式，即多个哨兵进程运行在不同的服务器上检测各个redis服务器，哨兵<strong>两两之间也会互相监控</strong>。<br> 多哨兵模式时，Master一旦宕机，哨兵1检测到这个结果，并不会马上进行故障切换，而仅仅是哨兵1主管的认为Master不可用。当其他哨兵也检测到Master不可用时，并且有<strong>一定的数量</strong>后，那么哨兵之间就会形成一次<strong>投票</strong>，投票的结果由一个哨兵发起，进行切换操作，切换完成后，就会通过发布订阅方式让各个哨兵把自己监控的服务器实现切换主机。</p>
+<h6 id="哨兵模式配置"><a href="#哨兵模式配置" class="headerlink" title="哨兵模式配置"></a>哨兵模式配置</h6><p>  配置哨兵配置文件：<br>redis/src/sentinel.conf<br> 默认端口:<br>port 26379<br> 内容如下：<br>禁止保护模式<br>protected-mode no<br> 配置监听的主服务， 最后的2表示当2个或2个以上的哨兵认为主服务不可用才会进行故障切换<br>sentinel monitor 服务器名称(自定义)  主服务ip  端口  2<br> 定义服务密码<br>sentinel auth-pass  服务器名称(和上面相同)  密码<br> 打开服务端口:哨兵之间两两监控<br>vim /etc/sysconfig/iptables<br>service iptables restart</p>
+<h6 id="启动哨兵"><a href="#启动哨兵" class="headerlink" title="启动哨兵"></a>启动哨兵</h6><p>./redis-sentinel sentinel.conf</p>
+<h6 id="哨兵的其他配置"><a href="#哨兵的其他配置" class="headerlink" title="哨兵的其他配置"></a>哨兵的其他配置</h6><p> sentinel down-after-milliseconds </p>
+<pre><code>- 指定哨兵在检测redis服务时，当redis服务在一个毫秒数内都无法回答时，单个哨兵认为的主观下线时间，默认为30秒
+</code></pre><p> sentinel failover-timeout</p>
+<pre><code>- 指定故障切换运行的毫秒数，当超过这个毫秒数时，就认为切换故障失败，默认3分钟
+</code></pre><p> sentinel notification-script</p>
+<pre><code>- 指定哨兵检测到redis实例异常时，调用的报警脚本
+</code></pre><h6 id="Spring中启动哨兵"><a href="#Spring中启动哨兵" class="headerlink" title="Spring中启动哨兵"></a>Spring中启动哨兵</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 哨兵配置 --&gt;</span><br><span class="line">&lt;bean id=&quot;sentinelConfig&quot; </span><br><span class="line">	class=&quot;org.springframework.data.redis.connection.RedisSentinelConfiguration&quot;&gt;</span><br><span class="line">&lt;!-- 配置master主服务的名称 --&gt;</span><br><span class="line">	&lt;property name=&quot;master&quot;&gt;</span><br><span class="line">	   &lt;bean class=&quot;org.springframework.data.redis.connection.RedisNode&quot;&gt;</span><br><span class="line">	    	&lt;property name=&quot;name&quot; value=&quot;mymaster&quot;/&gt;</span><br><span class="line">	    &lt;/bean&gt;</span><br><span class="line">		&lt;/property&gt;</span><br><span class="line">		    &lt;!-- 配置哨兵服务 --&gt;</span><br><span class="line">		    &lt;property name=&quot;sentinels&quot;&gt;</span><br><span class="line">		    	&lt;set&gt;</span><br><span class="line">		    		&lt;bean </span><br><span class="line">		    		class=&quot;org.springframework.data.redis.connection.RedisNode&quot;&gt;</span><br><span class="line">		    			&lt;constructor-arg name=&quot;host&quot; value=&quot;192.168.101.153&quot;/&gt;</span><br><span class="line">		    			&lt;constructor-arg name=&quot;port&quot; value=&quot;26379&quot;/&gt;</span><br><span class="line">		    		&lt;/bean&gt;</span><br><span class="line">			    	&lt;bean </span><br><span class="line">			    	class=&quot;org.springframework.data.redis.connection.RedisNode&quot;&gt;</span><br><span class="line">			    		&lt;constructor-arg name=&quot;host&quot; value=&quot;192.168.101.153&quot;/&gt;</span><br><span class="line">			    		&lt;constructor-arg name=&quot;port&quot; value=&quot;26380&quot;/&gt;</span><br><span class="line">			    	&lt;/bean&gt;</span><br><span class="line">			    	&lt;bean </span><br><span class="line">			    	class=&quot;org.springframework.data.redis.connection.RedisNode&quot;&gt;</span><br><span class="line">			    		&lt;constructor-arg name=&quot;host&quot; value=&quot;192.168.101.153&quot;/&gt;</span><br><span class="line">			    		&lt;constructor-arg name=&quot;port&quot; value=&quot;26381&quot;/&gt;</span><br><span class="line">			    	&lt;/bean&gt;</span><br><span class="line">		     &lt;/set&gt;</span><br><span class="line">	&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="SpringBoot中启动哨兵"><a href="#SpringBoot中启动哨兵" class="headerlink" title="SpringBoot中启动哨兵"></a>SpringBoot中启动哨兵</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  redis:</span><br><span class="line">    sentinel:</span><br><span class="line">      master: myMaster</span><br><span class="line">      nodes: </span><br><span class="line">        - 192.168.184.130:26379</span><br><span class="line">        - 192.168.184.131:26379</span><br><span class="line">        - 192.168.184.132:26379</span><br></pre></td></tr></table></figure>
+<h3 id="Cluster模式"><a href="#Cluster模式" class="headerlink" title="Cluster模式"></a>Cluster模式</h3><h6 id="Cluster集群的特点"><a href="#Cluster集群的特点" class="headerlink" title="Cluster集群的特点"></a>Cluster集群的特点</h6><p> 1、Client与redis节点直接连接,不需要中间proxy层.<br> 2、redis-cluster把所有的物理节点映射到[0-16383]slot（插槽）上,cluster 负责维护<br> 3、所有的redis节点彼此互联(PING-PONG机制),内部使用gossip二进制协议优化传输数据<br> 4、节点的失效检测是通过集群中超过半数的节点检测失效时才生效.<br> 问题：Redis 集群中内置了 16384 个哈希槽，那他是如何决定将key放入哪个插槽的？</p>
+<pre><code>- 当Redis 集群中放置一个 key-value 时，redis 先对 key 使用 crc16 算法算出一个结果，然后把结果对 16384 求余数，这样每个 key 都会对应一个编号在 0-16383 之间的哈希槽，redis 会根据节点数量大致均等的将哈希槽映射到不同的节点
+</code></pre><h6 id="Cluster集群搭建步骤"><a href="#Cluster集群搭建步骤" class="headerlink" title="Cluster集群搭建步骤"></a>Cluster集群搭建步骤</h6><p> 前置条件:删除redis/src下的appendonly.aof,dump.rdb,nodes-6379.conf 3个文件<br> 1.<br>    修改redis.conf，配置集群信息<br>    开启集群，cluster-enabled yes<br>    指定集群的配置文件，cluster-config-file nodes-端口.conf<br> 2、用redis-trib.rb搭建集群<br>因为redis-trib.rb是用Ruby实现的Redis集群管理工具，所以我们需要先安装ruby的环境<br> 2.1、安装ruby<br>yum -y install zlib ruby rubygems<br> 2.2、安装rubygems的redis依赖<br>gem install -l redis-3.3.0.gem<br> 3、安装好依赖的环境之后，我们就可以来使用脚本命令了<br>注意：此脚本文件在我们的解压缩目录src下<br>  执行命令：<br>./redis-trib.rb create –replicas 0 192.168.10.167:6379 192.168.10.167:6380 192.168.10.167:6381   开放16379  redis端口+1W<br>–replicas 0：指定了从数据的数量为0<br> 4、查看集群状态<br>通过客户端输入以下命令：<br>cluster nodes：这个命令可以查看插槽的分配情况<br>整个Redis提供了16384个插槽，./redis-trib.rb 脚本实现了是将16384个插槽平均分配给了N个节点。</p>
+<h6 id="Cluster高可用集群的搭建步骤"><a href="#Cluster高可用集群的搭建步骤" class="headerlink" title="Cluster高可用集群的搭建步骤"></a>Cluster高可用集群的搭建步骤</h6><p> 问题:集群中的故障检查机制<br>  1、当集群中的节点超过半数认为该目标节点疑似下线，那么该节点就会被标记为下线；<br>  2、当集群中的任何一个节点下线，就会导致插槽区有空档，不完整，那么该集群将不可用；<br> 解决方案</p>
+<pre><code>- 在Redis集群中可以使用主从模式实现某一个节点的高可用
+</code></pre><p> 创建新集群，且设置为一主一备<br>./redis-trib.rb create –replicas 1 192.168.10.167:6379 192.168.10.167:6380 192.168.10.167:6381 192.168.10.167:6382 192.168.10.167:6383 192.168.10.167:6384<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">    redis:</span><br><span class="line">    cluster:</span><br><span class="line">      max-redirects: 0</span><br><span class="line">      nodes:</span><br><span class="line">        - 192.168.184.130:26379</span><br><span class="line">        - 192.168.184.131:26379</span><br><span class="line">        - 192.168.184.132:26379</span><br></pre></td></tr></table></figure></p>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/11/29/Redis集群 - 副本/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2018/11/29/Redis集群 - 副本/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
