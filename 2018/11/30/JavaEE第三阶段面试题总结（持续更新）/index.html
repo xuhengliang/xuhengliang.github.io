@@ -1,0 +1,471 @@
+<!DOCTYPE HTML>
+<html>
+
+<head><meta name="generator" content="Hexo 3.8.0">
+	<link rel="bookmark" type="image/x-icon" href="/img/logo.jpg">
+	<link rel="shortcut icon" href="/img/logo.jpg">
+	
+			    <title>
+    Java学习之路
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/css/mic_main.css">
+    <link rel="stylesheet" href="/css/dropdownMenu.css">
+    <meta name="keywords" content="miccall">
+    
+    	<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+	 
+    <noscript>
+        <link rel="stylesheet" href="/css/noscript.css">
+    </noscript>
+    <style type="text/css">
+        body:before {
+          content: ' ';
+          position: fixed;
+          top: 0;
+          background: url('/img/timg.jpg') center 0 no-repeat;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          background-size: cover; 
+        }
+    </style>
+
+			    
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script async type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery.scrollex.min.js"></script>
+    <script src="/js/jquery.scrolly.min.js"></script>
+    <script src="/js/skel.min.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/main.js"></script>
+	
+</head>
+    
+		
+<!-- Layouts -->
+
+
+
+<!--  代码渲染  -->
+<link rel="stylesheet" href="/css/prism_coy.css">
+<link rel="stylesheet" href="/css/typo.css">
+<!-- 文章页 -->
+<body class="is-loading">
+    <!-- Wrapper 外包 s-->
+    <div id="wrapper" class="fade-in">
+        <!-- Intro 头部显示 s -->
+        <!-- Intro 头部显示 e -->
+        <!-- Header 头部logo start -->
+        <header id="header">
+    <a href="/" class="logo">MICCALL</a>
+</header>
+        <!-- Nav 导航条 start -->
+        <nav id="nav" class="special">
+            <ul class="menu links">
+			<!-- Homepage  主页  --> 
+			<li>
+	            <a href="/" rel="nofollow">主页</a>
+	        </li>
+			<!-- categories_name  分类   --> 
+	        
+	        <li class="active">
+	            <a href="#s1">分类</a>
+	                    <ul class="submenu">
+	                        <li>
+	                        
+	                    </li></ul>
+	        </li>
+	        
+	        <!-- archives  归档   --> 
+	        
+	        
+		        <!-- Pages 自定义   -->
+		        
+		        <li>
+		            <a href="/about/" title="简历">
+		                简历
+		            </a>
+		        </li>
+		        
+
+
+            </ul>
+            <!-- icons 图标   -->
+			<ul class="icons">
+                    
+                    <li>
+                        <a title="github" href="https://github.com/miccall" target="_blank" rel="noopener">
+                            <i class="icon fa fa-github"></i>
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a title="500px" href="http://500px.com" target="_blank" rel="noopener">
+                            <i class="icon fa fa-500px"></i>
+                        </a>
+                    </li>
+                    
+			</ul>
+</nav>
+
+        <div id="main">
+            <div class="post_page_title_img" style="height: 25rem;background-image: url();background-position: center; background-repeat:no-repeat; background-size:cover;-moz-background-size:cover;overflow:hidden;">
+                <a href="#" style="padding: 4rem 4rem 2rem 4rem ;"><h2></h2></a>
+            </div>
+            <!-- Post -->
+            <div class="typo" style="padding: 3rem;">
+                <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
+<h1 id="struts2框架"><a href="#struts2框架" class="headerlink" title="struts2框架"></a>struts2框架</h1><h2 id="简述struts中的mvc编程模式？"><a href="#简述struts中的mvc编程模式？" class="headerlink" title="简述struts中的mvc编程模式？"></a>简述struts中的mvc编程模式？</h2><p>MVC全名是Model View Controller，是模型(model)－视图(view)－控制器(controller)的缩写，Struts就是MVC中的C的角色，因为他主要是负责Action处理各种请求。</p>
+<h2 id="谈谈Struts2的工作原理"><a href="#谈谈Struts2的工作原理" class="headerlink" title="谈谈Struts2的工作原理"></a>谈谈Struts2的工作原理</h2><ol>
+<li>用户发出一个HttpServletRequest请求</li>
+<li>这个请求经过一系列的过滤器Filter来传送</li>
+<li>调用控制器FilterDispatcher</li>
+<li>控制器通过ActionMapper获得Action的信息</li>
+<li>控制器调用ActionProxy</li>
+<li>ActionProxy读取struts.xml文件获取action和interceptorStack的信息</li>
+<li>ActionProxy把request请求传递给ActionInvocation</li>
+<li>ActionInvocation依次调用action和interceptor</li>
+<li>根据action的配置信息，产生result</li>
+<li>Result信息返回给ActionInvocation</li>
+<li>产生一个HttpServletResponse响应</li>
+<li>产生的响应行为发送给客服端。</li>
+</ol>
+<h2 id="tocken防止重复提交"><a href="#tocken防止重复提交" class="headerlink" title="tocken防止重复提交"></a>tocken防止重复提交</h2><p>token实现的原理就是就是在表单中存放一个key(这个key也是存服务端获取)，表单提交的时候带着这个key，到服务端后先判断这个key是否有效，如果有效就处理用户的请求，处理完成后把key置为失效，如果key无效就提示用户该表单已经提交过一次了。</p>
+<h1 id="hibernate框架"><a href="#hibernate框架" class="headerlink" title="hibernate框架"></a>hibernate框架</h1><h2 id="谈谈Hiberante的缓存"><a href="#谈谈Hiberante的缓存" class="headerlink" title="谈谈Hiberante的缓存"></a>谈谈Hiberante的缓存</h2><p>Hibernae中存在三种缓存,分别是一级缓存，二级缓存，查询缓存，在第一次查询的时候会把结果放到缓存里面，第二次再查的直接从缓存中获取，所以Hibernate缓存可以提高查询效率</p>
+<ul>
+<li>一级缓存(session)<ul>
+<li>对当前session中有效，当session关闭后缓存被清空，对应的方法有get或load</li>
+</ul>
+</li>
+<li>二级缓存(sessionFactory)<ul>
+<li>二级缓存中的数据可使用范围是当前应用的所有会话，Hibernate中对二级缓存只提供了一个接口，具体的实现由第三方来做，常用的有EHCache,OSCache，SwarmCache和JBossCache。在访问指定的id的对象时，首先从一级缓存中查找，找到就直接使用，找不到则转到二级缓存中查找(必须配置且启用二级缓存)，如果二级缓存中找到，则直接使用，否则会查询数据库，并将查询结果根据对象的id放到缓存中</li>
+</ul>
+</li>
+<li>查询缓存<ul>
+<li>对于经常使用的查询语句，如果启用了查询缓存，当第一次执行查询语句时，Hibernate会把查询结果存放在第二缓存中。以后再次执行该查询语句时，只需从缓存中获得查询结果，从而提高查询性能</li>
+</ul>
+</li>
+</ul>
+<h2 id="谈谈Hibernate如何解决懒加载问题"><a href="#谈谈Hibernate如何解决懒加载问题" class="headerlink" title="谈谈Hibernate如何解决懒加载问题"></a>谈谈Hibernate如何解决懒加载问题</h2><ul>
+<li>可以通过设置lazy属性为false来解决懒加载的问题，这种是最简单的但是不实用。因为不管对象用或者不用Hiberate都会把其他属性或者关联对象查询出来，这样会导致资源浪费</li>
+<li>也可以通过OpenSessionInViewFilter来解决，这个方法是将session交给servletFilter管理，每当一个请求来之后就会开启一个session，只有当响应结束后才会关闭session。</li>
+</ul>
+<h1 id="spring框架"><a href="#spring框架" class="headerlink" title="spring框架"></a>spring框架</h1><h2 id="Spring中我们配置bean是在什么时候实例化的？以及bean在容器中存在的形态"><a href="#Spring中我们配置bean是在什么时候实例化的？以及bean在容器中存在的形态" class="headerlink" title="Spring中我们配置bean是在什么时候实例化的？以及bean在容器中存在的形态"></a>Spring中我们配置bean是在什么时候实例化的？以及bean在容器中存在的形态</h2><ul>
+<li>默认容器在加载的时候初始化bean,但是也可以通过设置lazy-init属性来延迟加载</li>
+<li>首先要实例化bean</li>
+<li>按照Spring的配置信息对bean进行装配，也就是IOC</li>
+<li>如果Bean在Spring配置文件中配置了init-method属性会自动调用该方法发进行初始化操作</li>
+<li>这是Bean就可以使用了</li>
+<li>如果该Bean不在使用，这个Bean就会被清理，如果配置了destroy-method属性，会自动调用其配置的销毁方法</li>
+</ul>
+<h2 id="描述一下spring的工作原理"><a href="#描述一下spring的工作原理" class="headerlink" title="描述一下spring的工作原理"></a>描述一下spring的工作原理</h2><ul>
+<li>Spring中两大核心思想IOC和AOP，IOC控制反转将对象创建的权利交给了Spring容器，可以自动生产。利用的就是反射的原理，动态的创建对象，调用对象，Spring就是运行的时候根据配置文件来动态的创建对象和维护对象之间的关系，实现了松耦合的思想。</li>
+<li>AOP是面向切面编程，就是可以很好的把业务逻辑和系统服务分离(事务，日志等)，业务逻辑只关心业务的处理而不再去处理其他事情，这些都是通过配置来实现。</li>
+</ul>
+<h2 id="谈谈IOC和DI-AOP以及列出项目开发中的应用场景"><a href="#谈谈IOC和DI-AOP以及列出项目开发中的应用场景" class="headerlink" title="谈谈IOC和DI,AOP以及列出项目开发中的应用场景"></a>谈谈IOC和DI,AOP以及列出项目开发中的应用场景</h2><ul>
+<li>IOC和AOP的概念上面的面试题中已经说过了，下面主要说说DI和使用场景</li>
+<li>依赖注入(Dependency Injection)这就是DI，由Spring容器将对象注入到使用到它的地方，被注入的对象只提供对应的方法接受就行，由容器来决定对象之间的依赖关系。</li>
+<li>使用场景<ul>
+<li>IOC:项目中的Bean都可以交给Spring容器来维护，这样Bean的创建及销毁以及生命周期都不需要我们去处理都由Spring来管理。</li>
+<li>DI:比如service层需要调用Dao层访问数据库,这时可以把service层的Bean和Dao层的Bean给Spring管理，我们只需要在service中定义对应的方法来接收Spring容器给我注入的Dao层的Bean即可</li>
+<li>AOP:事务，日志，权限等</li>
+</ul>
+</li>
+</ul>
+<h2 id="谈谈Spring如何配置声明式事务控制"><a href="#谈谈Spring如何配置声明式事务控制" class="headerlink" title="谈谈Spring如何配置声明式事务控制"></a>谈谈Spring如何配置声明式事务控制</h2><p> 声明式事务管理也有两种常用的方式，一种是基于tx和aop名字空间的xml配置文件，另一种就是基于@Transactional注解</p>
+<ul>
+<li>配置文件<pre><code>- 配置事务管理器
+- 事务的策略(这里可以配置事务的隔离级别，传播属性，是否可读等)
+- 配置事务的切入点，注入事务属性
+</code></pre></li>
+<li>注解<pre><code>- 配置事务管理器
+- 开启事务控制的注解支持
+- 在类或者方法上面添加@Transactiona,事务的属性都在该注解的属性上设置
+</code></pre></li>
+</ul>
+<h2 id="谈谈Spring的作用域有哪些？"><a href="#谈谈Spring的作用域有哪些？" class="headerlink" title="谈谈Spring的作用域有哪些？"></a>谈谈Spring的作用域有哪些？</h2><ul>
+<li>单例(singleton)（默认）每一个Spring容器都只有一个实例对象</li>
+<li>原型（prototype）每次调用都会创建一个新的实例</li>
+<li>请求（request）每一个HTTP请求都有自己的Bean实例。只在基于web的Spring ApplicationContext中可用</li>
+<li>会话（session）在一次HttpSession中，容器会返回该Bean的同一实例。而对不同的Session请求则会创建新的实例，该bean实例仅在当前Session内有效在Web应用中使用Spring时，该作用域才有效</li>
+<li>globalSession 在一个全局的HttpSession中，容器会返回该Bean的同一个实例，仅在使用portletContext时有效</li>
+</ul>
+<h2 id="spring-aop的底层原理是什么？拦截器的优势有哪些？"><a href="#spring-aop的底层原理是什么？拦截器的优势有哪些？" class="headerlink" title="spring aop的底层原理是什么？拦截器的优势有哪些？"></a>spring aop的底层原理是什么？拦截器的优势有哪些？</h2><ul>
+<li>Spring AOP的底层都是通过代理来实现的<ul>
+<li>一种是基于JDK的动态代理</li>
+<li>一种是基于CgLIB的动态代理</li>
+</ul>
+</li>
+<li>拦截器是基于Java反射机制实现的，使用代理模式<ul>
+<li>拦截器不依赖于servlet容器</li>
+<li>拦截器只能对action请求起作用</li>
+<li>拦截器可以访问action上下文</li>
+<li>拦截器可以获取IOC容器中的各个bean</li>
+<li>在action生命周期中，拦截器可以被多次调用</li>
+</ul>
+</li>
+</ul>
+<h2 id="spring的特点？如何手写实现spring原理？"><a href="#spring的特点？如何手写实现spring原理？" class="headerlink" title="spring的特点？如何手写实现spring原理？"></a>spring的特点？如何手写实现spring原理？</h2><ul>
+<li>Spring量大核心思想AOP和IOC(具体上面有)</li>
+<li>Spring是个巨大的工厂，这个工厂就是专门用来生成Bean,所以如果要手写的一定要用到工厂设计模式</li>
+<li>写一个工厂类，对外提供一个静态方法，这个方法接受用户要创建对象的一个id，对象和id可以写到配置文件里面，工厂再提供一个init方法进行读取配置文件。用户调用的是传入id根据id在配置文件中找到要创建的对象，最后通过反射创建对象并返回给用户</li>
+</ul>
+<h1 id="springMVC框架"><a href="#springMVC框架" class="headerlink" title="springMVC框架"></a>springMVC框架</h1><h2 id="Controller接收JSON数据使用哪个注解？"><a href="#Controller接收JSON数据使用哪个注解？" class="headerlink" title="Controller接收JSON数据使用哪个注解？"></a>Controller接收JSON数据使用哪个注解？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">方法的形参上用@RequestBody修饰</span><br><span class="line">@RequestMapping(value = &quot;/addJSON&quot;)</span><br><span class="line">public String addJSON(@RequestBody User user) &#123;</span><br><span class="line">	System.out.println(&quot;UserController.add() &quot;+user);</span><br><span class="line">		return &quot;ok&quot;;</span><br><span class="line">&#125;</span><br><span class="line">发送时要写上 contentType:&apos;application/json&apos;</span><br><span class="line">$.ajax(&#123;</span><br><span class="line">	url :&quot;addJSON&quot;,</span><br><span class="line">	type :&quot;POST&quot;, </span><br><span class="line">	dataType:&quot;json&quot;,</span><br><span class="line">	contentType:&apos;application/json;charset=UTF-8&apos;,</span><br><span class="line">	data:JSONstr,</span><br><span class="line">    success : function(data) &#123;</span><br><span class="line">		console.info(data);   </span><br><span class="line">	&#125; </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h2 id="谈谈SpringMVC的工作原理"><a href="#谈谈SpringMVC的工作原理" class="headerlink" title="谈谈SpringMVC的工作原理"></a>谈谈SpringMVC的工作原理</h2><ol>
+<li>用户向服务器发送请求，请求先被SpringMVC 前端控制DispatcherServlet捕获；</li>
+<li>DispatcherServlet对请求URL进行解析，得到请求资源标识符（URI）。然后根据该URI，调用     HandlerMapping获得该Handler配置的所有相关的对象，最后以HandlerExecutionChain对象的形式返回</li>
+<li>DispatcherServlet根据获得的Handler，选择一个合适的HandlerAdapter。</li>
+<li>提取Request中的模型数据，填充Handler入参，开始执行Controller</li>
+<li>Controller执行完成后，向DispatcherServlet 返回一个ModelAndView对象；</li>
+<li>根据返回的ModelAndView，选择一个适合的ViewResolver返回给DispatcherServlet；</li>
+<li>ViewResolver 结合Model和View，来渲染视图</li>
+<li>将渲染结果返回给客户端。</li>
+</ol>
+<h2 id="谈谈你对SSM（SpringMVC-Spring-Mybatis）的理解，他们是如何协作完成功能开发的？可以以完成某个功能来描述其各自的作用"><a href="#谈谈你对SSM（SpringMVC-Spring-Mybatis）的理解，他们是如何协作完成功能开发的？可以以完成某个功能来描述其各自的作用" class="headerlink" title="谈谈你对SSM（SpringMVC Spring Mybatis）的理解，他们是如何协作完成功能开发的？可以以完成某个功能来描述其各自的作用"></a>谈谈你对SSM（SpringMVC Spring Mybatis）的理解，他们是如何协作完成功能开发的？可以以完成某个功能来描述其各自的作用</h2><ul>
+<li>SSM是标准的MVC设计模式，将整个系统划分为显示层，控制层，业务层，数据层四层。</li>
+<li>SpringMVC负责请求的转发和视图管理</li>
+<li>MyBatis负责数据库查询数据库</li>
+<li>spring则是负责协调，实现业务对象管理，也就是最为不同层面的衔接</li>
+</ul>
+<h2 id="springMVC中的常用注解"><a href="#springMVC中的常用注解" class="headerlink" title="springMVC中的常用注解"></a>springMVC中的常用注解</h2><ul>
+<li>@RequestMapping – 请求和方法映射</li>
+<li>@RequsetBody – 接收客户端出传入的JOSN数据</li>
+<li>@ResponceBody – 返回客户端JOSN数据</li>
+<li>@Controller – 代表控制层</li>
+<li>@Service – 代表业务层</li>
+<li>@Repository – 代表数据层</li>
+<li>@Component – 把Bean添加到Spring容器中</li>
+<li>@Autowired – 自动注入，按照类型注入</li>
+<li>@Resource – 自定注入，可以按照类型注入也可以按照名字注入</li>
+<li>@PathVariable – restFul风格的时候使用</li>
+<li>@Param – 表单参数和方法形参不一样时使用</li>
+</ul>
+<h1 id="mybatis框架"><a href="#mybatis框架" class="headerlink" title="mybatis框架"></a>mybatis框架</h1><h2 id="mybatis和hibernate的区别"><a href="#mybatis和hibernate的区别" class="headerlink" title="mybatis和hibernate的区别"></a>mybatis和hibernate的区别</h2><ul>
+<li>MyBatis<ul>
+<li>优点<ul>
+<li>可以由开发者灵活的控制SQL语句，减少查询字段</li>
+<li>所有的SQL语句都放在统一配置文件中方便维护，管理，减少SQL和程序的耦合</li>
+<li>MyBatis是一个半自动化的ORM框架，对象数据以及对象实际关系仍然需要通过手写sql来实     现和管理</li>
+<li>支持动态编写SQL</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>数据库移植性很弱，不同的数据库要编写不同的SQL语句</li>
+<li>DAO层的方法不支持方法的重载</li>
+<li>不支持级联更新和删除</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Hibernate</p>
+<ul>
+<li>优点<ul>
+<li>Hibernate中的方言可以方便的做到数据库的移植</li>
+<li>Hibernate中提供了一级缓存，二级缓存，查询缓存来提高查询效率，MyBatis中的缓存不佳</li>
+<li>Hibernate是个全自动化科技，Dao层的开发比较简单，直接调用save方法即可</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>多表关联的时候比较复杂，使用成不不低</li>
+<li>SQL语句都是自动生成，对于SQL的优化，修改比较困难</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>总结<br>  -两个框架各有千秋，如果项目中很少存在多表关联查询(比如10张表以上)那可以选择使用Hiberate，否则还是选择MyBatis，具体选择哪个框架还是要根据项目来定。</p>
+<p>  最后再来个小的总结<br>  mybatis：小巧、方便、高效、简单、直接、半自动<br>  hibernate：强大、方便、高效、复杂、绕弯子、全自动</p>
+</li>
+</ul>
+<h2 id="mybatis的-和-的区别"><a href="#mybatis的-和-的区别" class="headerlink" title="mybatis的$和#的区别"></a>mybatis的$和#的区别</h2><ul>
+<li>#:被解析为jdbc的预编译语句,比如：#{name}最后被动态解析为一个?,其次有jdbc的预编译对象给？赋值，这种方式不会出现sql注入的问题。</li>
+<li>$:将传入的内容直接写到sql语句中，比如：select <em> from ${tableName}，传递的参数是”t_user”,最终被解析为select </em> from t_user。这种方式会出现sql注入的问题，一般用于传入动态表或者使用动态字段排序。</li>
+</ul>
+<h2 id="mybatis实现原理"><a href="#mybatis实现原理" class="headerlink" title="mybatis实现原理"></a>mybatis实现原理</h2><ul>
+<li>MyBatis底层依然采用JDBC对数据库进行操作，通过SqlSession,    Executor,StatementHandler，ParameterHandler,ResultHandler和TypeHandler等几个处理器封装了执行过程.</li>
+<li>SqlSession：MyBatis操作的顶层接口，做为会话访问，完成曾删改查功能</li>
+<li>Executor:MyBatis执行器，这是MyBatis最核心的一个接口了，负责动态SQL的生成和查询缓存</li>
+<li>StatementHandler:负责和JDBC的Statement交互和设置Statement的参数,以及将JDBC的返回resultSet转成list</li>
+<li>ParameterHandler：负责根据传递的参数，给Statement对象设置参数</li>
+<li>ResultHandler:负责将ResultSet结果集转成list</li>
+<li>TypeHandler:否则JavaType和JdbcType的转换，为Statement对象设置参数</li>
+</ul>
+<h2 id="mybatis批量插入怎么实现？"><a href="#mybatis批量插入怎么实现？" class="headerlink" title="mybatis批量插入怎么实现？"></a>mybatis批量插入怎么实现？</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">可以通过foreach标签实现批量插入</span><br><span class="line"> &lt;insert id=&quot;addUsers&quot;&gt;  </span><br><span class="line">    INSERT INTO t_user(name,password)  VALUES   </span><br><span class="line">	&lt;foreach collection=&quot;users&quot; item=&quot;user&quot; separator=&quot;,&quot;&gt;  </span><br><span class="line">		  (#&#123;user.name&#125;,#&#123;user.password&#125;)  </span><br><span class="line">	&lt;/foreach&gt;  </span><br><span class="line">&lt;/insert&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Mybatis中XML文件中标签可以写删除sql吗"><a href="#Mybatis中XML文件中标签可以写删除sql吗" class="headerlink" title="Mybatis中XML文件中标签可以写删除sql吗"></a>Mybatis中XML文件中<update>标签可以写删除sql吗</update></h2><p>可以</p>
+<h2 id="Mybatis中的fetch-size标签"><a href="#Mybatis中的fetch-size标签" class="headerlink" title="Mybatis中的fetch-size标签"></a>Mybatis中的fetch-size标签</h2><p>设置每次从数据库中取多少条记录，调用底层的preparedstatement的setfetchsize</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><h2 id="activiti工作流任务的处理"><a href="#activiti工作流任务的处理" class="headerlink" title="activiti工作流任务的处理"></a>activiti工作流任务的处理</h2><ul>
+<li>任务的处理需要用到taskService,要考虑是同意还是驳回，这个信息可以从表单中获取，然后调用完成任务的方法，把同意或者驳回做为流程变量传入进去。</li>
+<li>处理完成任务有可能还需要设置下一个处理人可以通过TaskListener来实现</li>
+</ul>
+<h2 id="说说FreeMarker？会用标签么？怎么遍历和判断是否为空"><a href="#说说FreeMarker？会用标签么？怎么遍历和判断是否为空" class="headerlink" title="说说FreeMarker？会用标签么？怎么遍历和判断是否为空"></a>说说FreeMarker？会用标签么？怎么遍历和判断是否为空</h2><ul>
+<li>FreeMarker是一个用Java语言编写的模板引擎，它基于模板来生成文本输出。它的优点有如下几点<ul>
+<li>不能编写java代码，可以实现严格的mvc分离</li>
+<li>性能非常不错</li>
+<li>对jsp标签支持良好 </li>
+<li>置大量常用功能，使用非常方便 </li>
+<li>宏定义（类似jsp标签）非常方便 </li>
+<li>使用表达式语言 </li>
+</ul>
+</li>
+<li>常用的标签有<ul>
+<li>&lt;#if obj??&gt; …&lt;#else&gt;….&lt;/#if&gt; – 判断对象是否存在</li>
+<li>&lt;#if obj?exists &amp;&amp;  obj.id == 1&gt;…&lt;#else&gt;….&lt;/#if&gt;  – 比较</li>
+<li>&lt;#list listObj  as  obj&gt;  – 集合遍历</li>
+<li>${list?size} – 获取集合长度 </li>
+</ul>
+</li>
+</ul>
+<h2 id="请你谈谈你对Maven的认识？"><a href="#请你谈谈你对Maven的认识？" class="headerlink" title="请你谈谈你对Maven的认识？"></a>请你谈谈你对Maven的认识？</h2><ul>
+<li>Maven是一个采用纯Java编写的开 源项目管理工具。Maven采用了一种被称之为project object model (POM)概念来管理项目，所有的项目配置信息都被定义在一个叫做POM.xml的文件中，通过该文件，Maven可以管理项目的整个声明周期，包括编 译，构建，测试，发布，报告等等。目前Apache下绝大多数项目都已经采用Maven进行管理。而Maven本身还支持多种插件，可以方便更灵活的控制 项目</li>
+</ul>
+<h2 id="请你谈谈SVN使用时的注意事项？当发生冲突的时候怎么解决？"><a href="#请你谈谈SVN使用时的注意事项？当发生冲突的时候怎么解决？" class="headerlink" title="请你谈谈SVN使用时的注意事项？当发生冲突的时候怎么解决？"></a>请你谈谈SVN使用时的注意事项？当发生冲突的时候怎么解决？</h2><ul>
+<li>在项目中使用SVN尽量要常更新，早提交。</li>
+<li>在提交时，写上明确的message，方便以后查找用户更新的原因</li>
+<li>养成良好的使用习惯，使用SVN时每次都是先更新，后提交。每天早上打开后，首先要从版本库获取最新版本。每天下班前必须将已经编辑过的文档都提交到版本库</li>
+<li>解决冲突两种方式<ul>
+<li>放弃自己的更新，使用别人的更新。使用最新获取的版本覆盖目标文件</li>
+<li>手动解决：冲突发生时，通过和其他用户沟通之后，手动更新目标文件。然后执行resolved filename来解除冲突，最后提交</li>
+</ul>
+</li>
+</ul>
+<h2 id="谈谈你们权限管理是如何实现的？涉及的表有哪些？表之间的关系如何？如何控制用户可以访问的菜单？"><a href="#谈谈你们权限管理是如何实现的？涉及的表有哪些？表之间的关系如何？如何控制用户可以访问的菜单？" class="headerlink" title="谈谈你们权限管理是如何实现的？涉及的表有哪些？表之间的关系如何？如何控制用户可以访问的菜单？"></a>谈谈你们权限管理是如何实现的？涉及的表有哪些？表之间的关系如何？如何控制用户可以访问的菜单？</h2><ul>
+<li>权限的设计离不开角色，用户和权限，这三个维度是在设计权限管理中最基础的。在分配的时候可以先给角色分配权限，然后再给人分配角色，这样以来不同的人也就有了不同的角色，从而从而也就有了不同的权限。</li>
+<li>权限的实现要利用到AOP的思想，在用户访问某个方法的时候先判断用户是否有访问该方法的权限，如果有就执行，如果没有就跳转到没有权限的页面不让他访问，这样就可以实现controller的控制</li>
+<li>菜单我们可以做成动态的都去数据库查，没次查到的都是当前用户有权限能看到的菜单，没有权限的查不到自然也就看不到，还有一种就是不是动态的，在页面中做判断，如果有这个菜单的权限就显示，没有就不显示。</li>
+<li>已经实现的权限框架比较常用的有Shiro，SpringSecurity</li>
+</ul>
+<h2 id="webservice的理解"><a href="#webservice的理解" class="headerlink" title="webservice的理解"></a>webservice的理解</h2><ul>
+<li>WebService是一种跨编程语言和跨操作系统平台的远程调用技术。</li>
+<li>所谓跨语言就是服务端可以用户Java写，客户端可以用别的语言写</li>
+<li>所谓跨平台就是服务端和客户端可以在不同的操作系统上</li>
+<li>经典的就是天气情况，现在每个手机上都可以查看今天天气的情况，我们的手机其实就是一个客户端，由客户端通过网络访问服务端，服务端在就在某家公司的服务器上，他们通过各种硬件和技术得到今天的天气情况，把这些信息全都转成数据方入到服务器上，我们直接通过手机就能查询到今天天气的情况。</li>
+</ul>
+
+            </div>
+
+            <!-- Post Comments -->
+            
+    <!-- 使用 DISQUS_CLICK -->
+<div id="disqus-comment">
+    <div id="disqus_thread"></div>
+
+<!-- add animation -->
+<style>
+	.disqus_click_btn {
+            line-height: 30px;
+            margin: 0;
+            min-width: 50px;
+            padding: 0 14px;
+            display: inline-block;
+            font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0;
+            overflow: hidden;
+            will-change: box-shadow;
+            transition: box-shadow .2s cubic-bezier(.4, 0, 1, 1), background-color .2s cubic-bezier(.4, 0, .2, 1), color .2s cubic-bezier(.4, 0, .2, 1);
+            outline: 0;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            vertical-align: middle;
+            border: 0;
+            background: rgba(158, 158, 158, .2);
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, .14), 0 3px 1px -2px rgba(0, 0, 0, .2), 0 1px 5px 0 rgba(0, 0, 0, .12);
+            color: #fff;
+            background-color: #7EC0EE;
+            text-shadow: 0
+        }
+</style>
+	
+<div class="btn_click_load" id="disqus_bt"> 
+    <button class="disqus_click_btn">点击查看评论</button>
+</div>
+
+<!--
+<script type="text/javascript">
+$('.btn_click_load').click(function() {
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'http-miccall-tech'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    document.getElementById('disqus_bt').style.display = "none";
+});
+</script>
+-->
+<script type="text/javascript">
+    var disqus_config = function () {
+        this.page.url = 'http://yoursite.com/2018/11/30/JavaEE第三阶段面试题总结（持续更新）/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://yoursite.com/2018/11/30/JavaEE第三阶段面试题总结（持续更新）/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+</script>
+
+<script type="text/javascript">
+    $('.btn_click_load').click(function() {  //click to load comments
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document;
+            var s = d.createElement('script');
+            s.src = '//http-miccall-tech.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', + new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+        $('.btn_click_load').css('display','none');
+    });
+</script>
+</div>
+<style>
+    #disqus-comment{
+        background-color: #eee;
+        padding: 2pc;
+    }
+</style>
+
+
+        </div>
+        <!-- Copyright 版权 start -->
+                <div id="copyright">
+            <ul>
+                <li>&copy;Powered By <a href="https://hexo.io/zh-cn/" style="border-bottom: none;">hexo</a></li>
+                <li>Design: <a href="http://miccall.tech " style="border-bottom: none;">miccall</a></li>
+            </ul>
+            
+                <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+			
+        </div>
+    </div>
+</body>
+
+
+
+ 	
+</html>
